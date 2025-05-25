@@ -1,0 +1,14 @@
+[
+    {
+        "snippet": "function greet(name: string): string {  return `Hello, ${name}`;}",
+        "wordsQuantity": 10
+    },
+    {
+        "snippet": "interface User {  id: number;  name: string;}",
+        "wordsQuantity": 10
+    },
+    {
+        "snippet": "const sum = (a: number, b: number): number => a + b;",
+        "wordsQuantity": 11
+    }
+]

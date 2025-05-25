@@ -1,0 +1,14 @@
+[
+    {
+        "snippet": "type Props = {  title: string;};const Title = ({ title }: Props) => <h1>{title}</h1>;",
+        "wordsQuantity": 17
+    },
+    {
+        "snippet": "import { useState } from 'react';function Counter() {  const [count, setCount] = useState(0);  return <button onClick={() => setCount(count + 1)}>{count}</button>;}",
+        "wordsQuantity": 26
+    },
+    {
+        "snippet": "const App = () => {  return (    <div>      <p>Hello React + TS!</p>    </div>  );};",
+        "wordsQuantity": 20
+    }
+]

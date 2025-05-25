@@ -1,0 +1,14 @@
+[
+    {
+        "snippet": "function sum(a, b) {  return a + b;}",
+        "wordsQuantity": 8
+    },
+    {
+        "snippet": "const numbers = [1, 2, 3];const doubled = numbers.map(n => n * 2);",
+        "wordsQuantity": 14
+    },
+    {
+        "snippet": "const greet = name => `Hello, ${name}!`;console.log(greet(\"Alex\"));",
+        "wordsQuantity": 12
+    }
+]
