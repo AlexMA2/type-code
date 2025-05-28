@@ -3,14 +3,14 @@
         "target": "ESNext",
         "module": "ESNext",
         "jsx": "react-jsx",
-        "moduleResolution": "Node",
+        "moduleResolution": "Bundler",
         "baseUrl": "src",
         "paths": {
-            "@/*": ["*"],
-            "@services/*": ["services/*"],
-            "@components/*": ["components/*"],
-            "@hooks/*": ["hooks/*"],
-            "@utils/*": ["utils/*"]
+            "@/*": ["./src/*"],
+            "@/services/*": ["services/*"],
+            "@/components/*": ["components/*"],
+            "@/hooks/*": ["hooks/*"],
+            "@/utils/*": ["utils/*"]
         },
         "strict": true,
         "esModuleInterop": true,

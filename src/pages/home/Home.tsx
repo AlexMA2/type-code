@@ -1,12 +1,13 @@
-import { toTimeString } from "@utils/formatters";
-import { useTimer } from "@hooks/useTimer";
+import { toTimeString } from "@/utils/formatters";
+import { useTimer } from "@/hooks/useTimer";
 import { DiffEditor } from "@monaco-editor/react";
-import { LanguageCode } from "@services/CodeService/Code.model";
-import { useGetCode } from "@services/CodeService/CodeAPI";
+import { LanguageCode } from "@/services/CodeService/Code.model";
+import { useGetCode } from "@/services/CodeService/CodeAPI";
 import * as babelPlugin from "prettier/plugins/babel";
 import * as estreePlugin from "prettier/plugins/estree";
 import * as prettier from "prettier/standalone";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@chakra-ui/react";
 
 export interface Stats {
     cps: number;
