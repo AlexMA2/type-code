@@ -1,5 +1,8 @@
 #!/bin/sh
-if grep -r 'console.log' *.tsx; then
-  echo "Error: No se permite 'console.log' en el código."
+. "$(dirname "$0")/_/husky.sh"
+
+# Buscar 'console.log' en los archivos .tsx staged
+if git diff --cached --name-only | grep -E '\.tsx$' | xargs grep -n 'console\.log'; then
+  echo "✖ Error: 'console.log' encontrado en los archivos .tsx. El commit ha sido abortado."
   exit 1
 fi
