@@ -41,7 +41,6 @@ export const useKeyLogger = (onFirstTimeKeyPress: () => void) => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (AUXILIAR_KEYS.includes(event.key)) return;
 
-            console.log("🚀 ~ handleKeyDown ~ event.key:", event.key);
             setKeysPressed((prev) => [...prev, event.key]);
             if (firstTime) {
                 setFirstTime(false);

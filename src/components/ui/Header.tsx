@@ -8,25 +8,9 @@ import { useTranslation } from "react-i18next";
 
 const Header = () => {
     const location = useLocation();
-    console.log("🚀 ~ Header ~ location:", location);
     const isHome = location[0] === "/";
     const isStats = location[0] === "/stats";
 
-    console.log(
-        transformColors("secondary", {
-            "50": "#f6f7f8",
-            "100": "#ebecee",
-            "200": "#d9dcde",
-            "300": "#c4c9cc",
-            "400": "#a7aeb3",
-            "500": "#92999f",
-            "600": "#81878f",
-            "700": "#747981",
-            "800": "#61666c",
-            "900": "#505358",
-            "950": "#333538",
-        }),
-    );
     const { t } = useTranslation();
 
     return (

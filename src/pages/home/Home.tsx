@@ -51,12 +51,6 @@ const Home = () => {
     useEffect(() => {
         if (!finished) return;
 
-        console.log(
-            "🚀 ~ useEffect ~ finished:",
-            finished,
-            Math.round(formmatedCode.length / time),
-            toTimeString(time),
-        );
         setStats({
             cps: Math.round(formmatedCode.length / time),
             time: toTimeString(time),

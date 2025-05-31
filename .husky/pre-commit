@@ -1,8 +1,10 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Buscar 'console.log' en los archivos .tsx staged
-if git diff --cached --name-only | grep -E '\.tsx$' | xargs grep -n 'console\.log'; then
-  echo "✖ Error: 'console.log' encontrado en los archivos .tsx. El commit ha sido abortado."
-  exit 1
+# Verifica si hay console.log en archivos .js, .ts, .jsx, .tsx (ignorando node_modules)
+if grep -r "console.log" --include=\*.{js,ts,jsx,tsx} ./src 2>/dev/null; then
+  echo ""
+  echo "❌ ERROR: ¡NO SE PERMITEN 'console.log' EN EL CÓDIGO!"
+  echo "Elimínalos antes de hacer commit."
+  exit 1 # Bloquea el commit
 fi
