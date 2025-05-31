@@ -1,7 +1,10 @@
-import { Link, Route, Switch } from "wouter";
 import "./App.css";
-import Home from "./pages/home/Home";
+
 import Layout from "@/components/ui/layout";
+import { CodeProvider } from "./providers/CodeProvider";
+import { Route, Switch } from "wouter";
+
+import Home from "./pages/home/Home";
 
 function App() {
     return (
@@ -11,7 +14,9 @@ function App() {
             <Switch>
                 <Route path="/">
                     <Layout>
-                        <Home />
+                        <CodeProvider>
+                            <Home />
+                        </CodeProvider>
                     </Layout>
                 </Route>
 
