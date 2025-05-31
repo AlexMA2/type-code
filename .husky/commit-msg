@@ -1,4 +1,18 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
 
-npx --no -- commitlint --edit \
+commit_msg_file=$1
+commit_msg=$(cat $commit_msg_file)
+
+# Regex básico para Conventional Commits (tipo: scope? mensaje)
+# Tipos comunes: feat, fix, docs, style, refactor, test, chore
+regex="^(feat|fix|docs|style|refactor|test|chore)(\([a-z0-9_\-]+\))?: .{1,}"
+
+if ! echo "$commit_msg" | grep -qE "$regex"; then
+  echo "✖ Invalid commit message."
+  echo "→ Please use Conventional Commits format:"
+  echo "  type(scope?): description"
+  echo "  Examples: feat(parser): add new parsing logic"
+  echo "            fix: correct typo"
+  exit 1
+fi

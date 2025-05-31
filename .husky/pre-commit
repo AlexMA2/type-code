@@ -1,0 +1,5 @@
+#!/bin/sh
+if grep -r 'console.log' *.tsx; then
+  echo "Error: No se permite 'console.log' en el código."
+  exit 1
+fi
