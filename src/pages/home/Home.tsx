@@ -96,27 +96,30 @@ const Home = () => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full h-full">
+            <p className="text-mint-500 "> Text </p>
             {finished ? (
-                <p className="text-2xl text-gray-400">
+                <p className=" text-gray-400">
                     Finished in {stats.time} with {stats.cps} characters per
                     second!
                 </p>
             ) : (
-                <p className="text-2xl text-gray-400">{toTimeString(time)}</p>
-            )}
+                <>
+                    <h3>{toTimeString(time)}</h3>
 
-            <DiffEditor
-                height={"75vh"}
-                original={formmatedCode}
-                modified=""
-                theme="vs-dark"
-                options={{
-                    formatOnPaste: true,
-                    formatOnType: true,
-                    cursorBlinking: "smooth",
-                }}
-                onMount={handleEditorDidMount}
-            ></DiffEditor>
+                    <DiffEditor
+                        className="max-h-min"
+                        original={formmatedCode}
+                        modified=""
+                        theme="vs-dark"
+                        options={{
+                            formatOnPaste: true,
+                            formatOnType: true,
+                            cursorBlinking: "smooth",
+                        }}
+                        onMount={handleEditorDidMount}
+                    ></DiffEditor>
+                </>
+            )}
 
             {/* {<CodeSnippet snippet={data[1].snippet}></CodeSnippet>} */}
         </div>

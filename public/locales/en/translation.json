@@ -1,0 +1,25 @@
+{
+    "features": {
+        "label": "Features"
+    },
+    "fixes": {
+        "label": "Fixes"
+    },
+    "refactor": {
+        "label": "Refactor"
+    },
+    "version": {
+        "label": "Version"
+    },
+    "auth": {
+        "sign_in": "Sign in",
+        "sign_out": "Sign out",
+        "register": "Register"
+    },
+    "play": {
+        "label": "Play"
+    },
+    "stats": {
+        "label": "Your stats"
+    }
+}

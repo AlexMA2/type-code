@@ -1,7 +1,7 @@
 {
     "name": "type-code",
     "private": true,
-    "version": "0.0.0",
+    "version": "0.8.1",
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -14,8 +14,11 @@
         "@emotion/react": "^11.14.0",
         "@emotion/styled": "^11.14.0",
         "@monaco-editor/react": "^4.7.0",
-        "@tailwindcss/vite": "^4.1.7",
+        "@tailwindcss/vite": "^4.1.8",
         "framer-motion": "^6.5.1",
+        "i18next": "^25.2.1",
+        "i18next-browser-languagedetector": "^8.1.0",
+        "i18next-http-backend": "^3.0.2",
         "js-beautify": "^1.15.4",
         "monaco-editor": "^0.52.2",
         "next-themes": "^0.4.6",
@@ -23,8 +26,9 @@
         "prettier": "^3.5.3",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
+        "react-i18next": "^15.5.2",
         "react-icons": "^5.5.0",
-        "tailwindcss": "^4.1.7",
+        "tailwindcss": "^4.1.8",
         "vite-tsconfig-paths": "^5.1.4",
         "wouter": "^3.7.0"
     },

@@ -1,16 +1,7 @@
-import { Link as WouterLink } from "wouter";
-import {
-    Button,
-    Link as ChakraLink,
-    CloseButton,
-    Dialog,
-    Portal,
-} from "@chakra-ui/react";
-import { AiFillLinkedin } from "react-icons/ai";
-import { Icon } from "@chakra-ui/react";
-import { AiOutlineGithub } from "react-icons/ai";
-import { AiOutlineMail } from "react-icons/ai";
-import { AiOutlineBranches } from "react-icons/ai";
+import { Icon, Link as ChakraLink } from "@chakra-ui/react";
+import { AiFillLinkedin, AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
+
+import VersionModal from "./VersionModal";
 
 const Footer = () => {
     const subject = "Hello! I wanna talk about your app";
@@ -61,43 +52,7 @@ const Footer = () => {
                 </ul>
                 <ul className="flex gap-4 ">
                     <li>
-                        <Dialog.Root
-                            size="sm"
-                            placement="center"
-                            motionPreset="slide-in-bottom"
-                        >
-                            <Dialog.Trigger asChild>
-                                <Button variant="surface" size="sm">
-                                    <Icon color={"white"} size="lg">
-                                        <AiOutlineBranches />
-                                    </Icon>
-                                    <span className="text-white">
-                                        Version: 0.8.0
-                                    </span>
-                                </Button>
-                            </Dialog.Trigger>
-                            <Portal>
-                                <Dialog.Backdrop />
-                                <Dialog.Positioner>
-                                    <Dialog.Content>
-                                        <Dialog.Header>
-                                            <Dialog.Title>
-                                                Dialog Title
-                                            </Dialog.Title>
-                                            <Dialog.CloseTrigger asChild>
-                                                <CloseButton size="sm" />
-                                            </Dialog.CloseTrigger>
-                                        </Dialog.Header>
-                                        <Dialog.Body>
-                                            Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit. Sed do
-                                            eiusmod tempor incididunt ut labore
-                                            et dolore magna aliqua.
-                                        </Dialog.Body>
-                                    </Dialog.Content>
-                                </Dialog.Positioner>
-                            </Portal>
-                        </Dialog.Root>
+                        <VersionModal></VersionModal>
                     </li>
                 </ul>
             </nav>
