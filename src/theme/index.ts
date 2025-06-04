@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 
 const customConfig = defineConfig({
+    preflight: false,
     theme: {
         tokens: {
             colors: {

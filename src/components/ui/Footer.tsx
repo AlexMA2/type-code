@@ -15,12 +15,13 @@ const Footer = () => {
                             href="https://www.linkedin.com/in/alexmamani/"
                             rel="noreferrer"
                             target="_blank"
-                            color="teal.500"
                         >
                             <Icon size="lg">
-                                <AiFillLinkedin />
+                                <AiFillLinkedin color="#086bc9" />
                             </Icon>
-                            LinkedIn
+                            <span className="text-slate-700 dark:text-slate-100">
+                                LinkedIn
+                            </span>
                         </ChakraLink>
                     </li>
                     <li>
@@ -28,12 +29,13 @@ const Footer = () => {
                             rel="noreferrer"
                             target="_blank"
                             href="https://github.com/AlexMA2"
-                            color="teal.500"
                         >
                             <Icon size="lg">
                                 <AiOutlineGithub />
                             </Icon>
-                            GitHub
+                            <span className="text-slate-700 dark:text-slate-100">
+                                GitHub
+                            </span>
                         </ChakraLink>
                     </li>
                     <li>
@@ -44,9 +46,12 @@ const Footer = () => {
                             color="teal.500"
                         >
                             <Icon size="lg">
-                                <AiOutlineMail />
+                                <AiOutlineMail color="#f84a3d" />
                             </Icon>
-                            Email
+
+                            <span className="text-slate-700 dark:text-slate-100">
+                                Email
+                            </span>
                         </ChakraLink>
                     </li>
                 </ul>

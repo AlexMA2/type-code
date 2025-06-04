@@ -70,8 +70,13 @@ const CodeSnippet = (props: CodeProps) => {
         });
     }
     return (
-        <div className="w-full h-full">
-            <h3 className="!my-4">{toTimeString(time)}</h3>
+        <div className="w-full flex flex-col flex-1 justify-center items-center ">
+            <h3
+                className="
+            my-4"
+            >
+                {toTimeString(time)}
+            </h3>
 
             <DiffEditor
                 original={formmatedCode}

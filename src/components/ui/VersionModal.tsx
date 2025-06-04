@@ -87,7 +87,7 @@ const VersionModal = () => {
                         </Dialog.Header>
                         <Dialog.Body>
                             {Object.entries(changes).map(([key, value]) => (
-                                <div className="!mb-4" key={key}>
+                                <div className="mb-4" key={key}>
                                     <h5 className="text-primary-500">
                                         {t(`${key}.label`)}
                                     </h5>
@@ -109,7 +109,7 @@ const VersionModal = () => {
                                                 target="_blank"
                                                 color="teal.500"
                                             >
-                                                (@{commit.fixer}
+                                                &nbsp;(@{commit.fixer}
                                                 <Icon size="xs">
                                                     <FaExternalLinkAlt />
                                                 </Icon>
