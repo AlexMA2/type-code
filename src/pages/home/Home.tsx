@@ -3,7 +3,9 @@ import { useGetCode } from "@/services/CodeService/CodeAPI";
 import { toTimeString } from "@/utils/formatters";
 import { CodeContext } from "context/CodeContext";
 import { useContext, useEffect, useRef, useState } from "react";
+
 import CodeSnippet from "./components/Code";
+import Stats from "./components/Stats";
 
 export interface Stats {
     cps: number;
@@ -38,10 +40,7 @@ const Home = () => {
     return (
         <div className="flex flex-col items-center justify-center w-full h-full">
             {finished ? (
-                <p className=" text-gray-400">
-                    Finished in {stats.time} with {stats.cps} characters per
-                    second!
-                </p>
+                <Stats time={stats.time} cps={stats.cps} />
             ) : (
                 <CodeSnippet snippet={data[rdm].snippet}></CodeSnippet>
             )}
