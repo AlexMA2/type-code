@@ -21,5 +21,14 @@
     },
     "stats": {
         "label": "Your stats"
+    },
+    "time": {
+        "label": "Time"
+    },
+    "cps": {
+        "label": "CPS"
+    },
+    "points": {
+        "label": "Points"
     }
 }
