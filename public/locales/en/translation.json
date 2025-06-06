@@ -20,7 +20,8 @@
         "label": "Play"
     },
     "stats": {
-        "label": "Your stats"
+        "label": "Your stats",
+        "last": "Last stats"
     },
     "time": {
         "label": "Time"

@@ -4,6 +4,7 @@ import Layout from "@/components/ui/layout";
 import { CodeProvider } from "./providers/CodeProvider";
 import { Route, Switch } from "wouter";
 
+import Stats from "./pages/stats/Stats";
 import Home from "./pages/home/Home";
 
 function App() {
@@ -17,6 +18,12 @@ function App() {
                         <CodeProvider>
                             <Home />
                         </CodeProvider>
+                    </Layout>
+                </Route>
+
+                <Route path="/stats">
+                    <Layout>
+                        <Stats />
                     </Layout>
                 </Route>
 

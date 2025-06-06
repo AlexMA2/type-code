@@ -1,11 +1,12 @@
 import { useTimer } from "@/hooks/useTimer";
 import { toTimeString } from "@/utils/formatters";
 import { DiffEditor } from "@monaco-editor/react";
-import { useContext, useEffect, useRef, useState } from "react";
+import { CodeContext } from "context/CodeContext";
 import * as babelPlugin from "prettier/plugins/babel";
 import * as estreePlugin from "prettier/plugins/estree";
 import * as prettier from "prettier/standalone";
-import { CodeContext } from "context/CodeContext";
+import { useContext, useEffect, useRef, useState } from "react";
+
 export interface CodeProps {
     snippet: string;
 }

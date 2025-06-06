@@ -1,23 +1,24 @@
 import { LanguageCode } from "@/services/CodeService/Code.model";
 import { useGetCode } from "@/services/CodeService/CodeAPI";
+import { LS_LAST_STATS, LS_STATS_HISTORY } from "@/utils/constants";
 import { toTimeString } from "@/utils/formatters";
 import { CodeContext } from "context/CodeContext";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useLocalStorage } from "react-use";
+import { useLocation } from "wouter";
 
 import CodeSnippet from "./components/Code";
-import Stats from "./components/Stats";
-
-export interface Stats {
-    cps: number;
-    time: string;
-}
+import { calculateScore } from "@/utils/stats";
+import { Stat } from "pages/stats/Stats";
+import { format } from "date-fns";
 
 const Home = () => {
     const { data, loading, error } = useGetCode(LanguageCode.JavaScript);
-
-    const [stats, setStats] = useState<Stats>({ cps: 0, time: "" });
+    const [, setValue] = useLocalStorage<Stat>(LS_LAST_STATS);
+    const [history, setHistory] = useLocalStorage<Stat[]>(LS_STATS_HISTORY);
     const [rdm, setRdm] = useState(0);
     const { code, finished, time } = useContext(CodeContext);
+    const [, setLocation] = useLocation();
 
     useEffect(() => {
         if (!data) return;
@@ -27,10 +28,19 @@ const Home = () => {
     useEffect(() => {
         if (!finished) return;
 
-        setStats({
-            cps: Math.round(code.length / (time || 1)),
-            time: toTimeString(time),
-        });
+        const cps = parseFloat((code.length / (time || 1)).toFixed(2));
+        const timeString = toTimeString(time);
+        const lastStat = {
+            cps: cps,
+            time: timeString,
+            points: calculateScore(time, cps),
+            updatedAt: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
+        };
+        setValue(lastStat);
+
+        setHistory([...(history ?? []), lastStat]);
+
+        setLocation("/stats");
     }, [finished]);
 
     if (loading) return <p>Loading...</p>;
@@ -39,11 +49,7 @@ const Home = () => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full h-full">
-            {finished ? (
-                <Stats time={stats.time} cps={stats.cps} />
-            ) : (
-                <CodeSnippet snippet={data[rdm].snippet}></CodeSnippet>
-            )}
+            <CodeSnippet snippet={data[rdm].snippet}></CodeSnippet>
         </div>
     );
 };
