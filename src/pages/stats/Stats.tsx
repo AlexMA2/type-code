@@ -56,7 +56,6 @@ const Stats = () => {
     };
 
     const formatXAxis = (value: string) => {
-        console.log("🚀 ~ formatXAxis ~ value:", value);
         if (!value) return "";
         const formatted = format(new Date(value), "yyyy-MM-dd");
         return formatted;
