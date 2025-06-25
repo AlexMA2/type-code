@@ -1,10 +1,9 @@
-import { useLocation, Link as WouterLink } from "wouter";
-import { Link as ChakraLink, Icon } from "@chakra-ui/react";
+import { Icon, Link as ChakraLink } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { FaRegKeyboard } from "react-icons/fa";
 import { IoIosStats } from "react-icons/io";
-import { IoPersonOutline } from "react-icons/io5";
-import { transformColors } from "@/utils/formatters/colors";
-import { useTranslation } from "react-i18next";
+import { IoPersonOutline, IoSettingsOutline } from "react-icons/io5";
+import { Link as WouterLink, useLocation } from "wouter";
 
 const Header = () => {
     const location = useLocation();
@@ -53,14 +52,24 @@ const Header = () => {
                 </nav>
             </div>
 
-            <ChakraLink
-                as={WouterLink}
-                href="/profile"
-                className="inline-flex min-w-max"
-            >
-                <IoPersonOutline />
-                {t("auth.sign_in")}
-            </ChakraLink>
+            <div className="flex items-center gap-10 justify-end w-full min-w-max">
+                <ChakraLink
+                    as={WouterLink}
+                    href="/settings"
+                    className="inline-flex min-w-max"
+                >
+                    <IoSettingsOutline />
+                </ChakraLink>
+
+                <ChakraLink
+                    as={WouterLink}
+                    href="/profile"
+                    className="inline-flex min-w-max"
+                >
+                    <IoPersonOutline />
+                    {t("auth.sign_in")}
+                </ChakraLink>
+            </div>
         </header>
     );
 };

@@ -31,5 +31,20 @@
     },
     "points": {
         "label": "Points"
+    },
+    "languages": {
+        "code": "Code languages",
+        "label": "Language",
+        "english": "English",
+        "spanish": "Spanish",
+        "french": "French"
+    },
+    "select": {
+        "language": "Select a language",
+        "code": "Select a language code"
+    },
+    "characters": {
+        "range": "Characters range",
+        "between": "Between {{min}} and {{max}}"
     }
 }

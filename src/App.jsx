@@ -6,6 +6,7 @@ import { Route, Switch } from "wouter";
 
 import Stats from "./pages/stats/Stats";
 import Home from "./pages/home/Home";
+import Settings from "./pages/settings/Settings";
 
 function App() {
     return (
@@ -24,6 +25,18 @@ function App() {
                 <Route path="/stats">
                     <Layout>
                         <Stats />
+                    </Layout>
+                </Route>
+
+                <Route path="/settings">
+                    <Layout>
+                        <Settings />
+                    </Layout>
+                </Route>
+
+                <Route path="/sign-in">
+                    <Layout>
+                        <Settings />
                     </Layout>
                 </Route>
 
