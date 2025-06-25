@@ -96,8 +96,6 @@ const Settings = () => {
             (data) => {
                 setValue(data);
                 setInitialState(data);
-
-                console.log("🚀 ~ onSave ~ data:", data);
             },
             (error) => {
                 console.error(error);
