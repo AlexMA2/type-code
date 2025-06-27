@@ -43,6 +43,8 @@
         "@babel/parser": "^7.27.2",
         "@chakra-ui/cli": "^3.19.1",
         "@eslint/js": "^9.25.0",
+        "@netlify/build": "^33.5.0",
+        "@netlify/config": "^23.0.11",
         "@types/react": "^19.1.5",
         "@types/react-dom": "^19.1.5",
         "@vitejs/plugin-react": "^4.4.1",
