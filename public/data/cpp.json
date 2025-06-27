@@ -1,0 +1,8 @@
+[
+    {
+        "snippet": "std::u16string convertUTF8ToUTF16(const std::string& utf8) {\n  std::u16string ret;\n  const char* curr = utf8.data();\n  const char* end = curr + utf8.length();\n  while (curr < end) {\n    auto cp = decodeUTF8(curr);\n    encodeUTF16(ret, cp);\n  }\n  return ret;\n}"
+    },
+    {
+        "snippet": "static void ShutdownNotify(const ArgsManager& args)\n{\n    std::vector<std::thread> threads;\n    for (const auto& cmd : args.GetArgs(\"-shutdownnotify\")) {\n        threads.emplace_back(runCommand, cmd);\n    }\n    for (auto& t : threads) {\n        t.join();\n    }\n}"
+    }
+]

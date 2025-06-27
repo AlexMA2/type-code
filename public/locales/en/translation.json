@@ -46,5 +46,11 @@
     "characters": {
         "range": "Characters range",
         "between": "Between {{min}} and {{max}}"
+    },
+    "save": {
+        "label": "Save"
+    },
+    "cancel": {
+        "label": "Cancel"
     }
 }

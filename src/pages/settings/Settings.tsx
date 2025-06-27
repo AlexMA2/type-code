@@ -39,19 +39,8 @@ const Settings = () => {
             { label: "Go", value: LanguageCode.Go },
             { label: "Ruby", value: LanguageCode.Ruby },
             { label: "PHP", value: LanguageCode.PHP },
-            { label: "Swift", value: LanguageCode.Swift },
-            { label: "Kotlin", value: LanguageCode.Kotlin },
         ],
     });
-
-    const languages = createListCollection({
-        items: [
-            { label: "languages.english", value: Language.ENGLISH },
-            { label: "languages.spanish", value: Language.SPANISH },
-            { label: "languages.french", value: Language.FRENCH },
-        ],
-    });
-
     const sliderMarks = [
         { value: 50, label: "50" },
         { value: 200, label: "200" },
@@ -60,6 +49,15 @@ const Settings = () => {
     ];
 
     const { t } = useTranslation();
+
+    const languages = createListCollection({
+        items: [
+            { label: t("languages.english"), value: Language.ENGLISH },
+            { label: t("languages.spanish"), value: Language.SPANISH },
+            { label: t("languages.french"), value: Language.FRENCH },
+        ],
+    });
+
     const [value, setValue] = useLocalStorage<SettingsForm>(LS_SETTINGS);
 
     const [initialState, setInitialState] = useState<SettingsForm | undefined>(
@@ -73,6 +71,7 @@ const Settings = () => {
         setValue: formSetValue,
         control,
         reset,
+        formState: { isDirty },
     } = useForm<SettingsForm>({
         defaultValues: {
             game: {
@@ -204,15 +203,6 @@ const Settings = () => {
                             </Select.Root>
                         )}
                     ></Controller>
-                    <Button
-                        className="mt-6"
-                        variant="outline"
-                        onClick={() => {
-                            formSetValue("game.codeLanguage", []);
-                        }}
-                    >
-                        <FaTimes />
-                    </Button>
                 </div>
 
                 {/* Character range slider */}
@@ -261,6 +251,7 @@ const Settings = () => {
                         className="mt-6"
                         variant="solid"
                         onClick={onCancel}
+                        disabled={!isDirty}
                     >
                         {t("cancel.label")}
                     </Button>
@@ -272,6 +263,7 @@ const Settings = () => {
                         onClick={() => {
                             onSave();
                         }}
+                        disabled={!isDirty}
                     >
                         {t("save.label")}
                     </Button>

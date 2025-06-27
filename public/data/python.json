@@ -1,0 +1,8 @@
+[
+    {
+        "snippet": "def add_to_cache(cache_file, cache_key, cache_value):\n    temp_cache = _read_from_file(cache_file)\n    temp_cache[cache_key] = cache_value\n    _write_to_file(temp_cache, cache_file)"
+    },
+    {
+        "snippet": "model.fit(X_train, Y_train, batch_size=BATCH_SIZE, epochs=15)\n\nmodel.evaluate(X_test, Y_test, batch_size=BATCH_SIZE)\n\ny_pred = model.predict(X_test, batch_size=BATCH_SIZE)"
+    }
+]

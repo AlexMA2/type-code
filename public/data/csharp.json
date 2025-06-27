@@ -1,0 +1,8 @@
+[
+    {
+        "snippet": "private sealed class a\n\t{\n\t\tpublic Socket a;\n\n\t\tpublic d b;\n\n\t\tinternal void d(object A_0, ElapsedEventArgs A_1)\n\t\t{\n\t\t\tthis.b.a(A_0, A_1, this.a);\n\t\t}\n\n\t\tinternal void c(object A_0, ElapsedEventArgs A_1)\n\t\t{\n\t\t\tthis.b.a(A_0, A_1, this.a);\n\t\t}\n\t}"
+    },
+    {
+        "snippet": "private DateTimeOffset GetDateTimeOffsetFromGuid(Guid guid)\n    {\n        // offset to move from 1/1/0001, which is 0-time for .NET, to gregorian 0-time of 10/15/1582\n        var gregorianCalendarStart = new DateTimeOffset(1582, 10, 15, 0, 0, 0, TimeSpan.Zero);\n        const int versionByte = 7;\n        const int versionByteMask = 0x0f;\n        const int versionByteShift = 4;\n        const byte timestampByte = 0;\n\n        var bytes = guid.ToByteArray();\n\n        // reverse the version\n        bytes[versionByte] &= versionByteMask;\n        bytes[versionByte] |= 0x01 >> versionByteShift;\n\n        var timestampBytes = new byte[8];\n        Array.Copy(bytes, timestampByte, timestampBytes, 0, 8);\n\n        var timestamp = BitConverter.ToInt64(timestampBytes, 0);\n        var ticks = timestamp + gregorianCalendarStart.Ticks;\n\n        return new DateTimeOffset(ticks, TimeSpan.Zero);\n    }"
+    }
+]

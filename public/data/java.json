@@ -1,0 +1,8 @@
+[
+    {
+        "snippet": "public Pawn( ChessGameBoard board, int row, int col, int color ){\n        super( board, row, col, color, true );\n        notMoved = true;\n        possibleMoves = calculatePossibleMoves( board );\n    }"
+    },
+    {
+        "snipper": "class Simple{  \n    public static void main(String args[]){  \n     System.out.println(\"Hello Java\");  \n    }  \n} "
+    }
+]

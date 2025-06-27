@@ -1,12 +1,30 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# TypeCode
 
-Currently, two official plugins are available:
+Start typing code faster by practising in this app.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The app intended to be used as a place where the user can type code as fast as they can. The page will keep track of your previous attempts and show a chart to show your progress over time.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Roadmap
+
+### Refactor
+- Add unit testing using Jest
+- Add E2E testing using Cypress
+- Add more code examples for code languages
+
+### Features
+- Add a database to store all the code examples.
+- Use LLM to generate code examples base on demand and preferences
+- Add more languages as French, German, and others.
+- Implements Authentication using Firebase or AWS Cognito
+
+## Contributing
+
+Contributions are always welcome!
+
+See `contributing.md` for ways to get started.
+
+Please adhere to this project's `code of conduct`.
+

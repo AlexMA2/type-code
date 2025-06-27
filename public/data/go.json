@@ -1,0 +1,9 @@
+[
+    {
+        "snippet": "func NewPermission(http *utils.HttpClient) *Permission {\treturn &Permission{\t\tconfig: permissionConfig{\t\t\thttp: http,\t\t},\t}}",
+        "wordsQuantity": 10
+    },
+    {
+        "snippet": "function isoToCountryCode(isoCode: string, keyToGet: 'alpha2' | 'alpha3' | 'numeric' = 'alpha2') {\n  if (isoCode !== undefined) {   \n    const alpha2Code = countryCodeList.find((countryObj) => (\n      countryObj.alpha2 === isoCode\n      || countryObj.alpha3 === isoCode\n      || countryObj.numeric === isoCode\n    ))[keyToGet]\n    return alpha2Code\n  }\n}"
+    }
+]

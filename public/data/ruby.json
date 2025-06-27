@@ -1,0 +1,8 @@
+[
+    {
+        "snippet": "  def location=(location)\n    case location\n    when nil\n      self.lat = self.lng = nil\n      return\n    when Location\n    else\n      location = Location.new(location)\n    end\n    self.lat = location.lat\n    self.lng = location.lng\n    location\n  end"
+    },
+    {
+        "snippet": "class Link < ActiveRecord::Base\n  belongs_to :source, class_name: \"Agent\", inverse_of: :links_as_source\n  belongs_to :receiver, class_name: \"Agent\", inverse_of: :links_as_receiver\n\n  before_create :store_event_id_at_creation\n\n  def store_event_id_at_creation\n    self.event_id_at_creation = source.events.limit(1).reorder(\"id desc\").pluck(:id).first || 0\n  end\nend"
+    }
+]

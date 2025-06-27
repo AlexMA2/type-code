@@ -1,0 +1,8 @@
+[
+    {
+        "snippet": "    public function removeRepository(string $name): void\n    {\n        $this->manipulateJson('removeRepository', static function (&$config, $repo): void {\n            unset($config['repositories'][$repo]);\n        }, $name);\n    }\n"
+    },
+    {
+        "snippet": "if (!$systemConfig->getValue('installed', false) && OC::$SUBURI !== '/index.php' && OC::$SUBURI !== '/status.php') {\n\t\t\tif (OC::$CLI) {\n\t\t\t\tthrow new Exception('Not installed');\n\t\t\t} else {\n\t\t\t\t$url = OC::$WEBROOT . '/index.php';\n\t\t\t\theader('Location: ' . $url);\n\t\t\t}\n\t\t\texit();\n\t\t} "
+    }
+]
