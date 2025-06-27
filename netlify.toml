@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build"
+  command = "npm install --force && npm run build"
   publish = "dist"
   environment = { NODE_VERSION = "18.18.2" }
 
-[context.production.environment]
+[build.environment]
   NODE_OPTIONS = "--openssl-legacy-provider"
