@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Layout from "@/components/ui/layout";
+import Layout from "@/components/ui/Layout";
 import { CodeProvider } from "./providers/CodeProvider";
 import { Route, Switch } from "wouter";
 
