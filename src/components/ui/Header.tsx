@@ -17,7 +17,7 @@ const Header = () => {
             <div className=" flex items-center gap-10 justify-start w-full min-w-max ">
                 <div className="flex items-center justify-center ">
                     <img
-                        src="src/assets/logo/logo-dark-md.svg"
+                        src="/images/logo/logo-dark-md.svg"
                         alt="Logo"
                         className="w-24"
                     />
