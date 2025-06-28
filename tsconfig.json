@@ -6,11 +6,11 @@
         "moduleResolution": "Bundler",
         "baseUrl": "src",
         "paths": {
-            "@/*": ["./src/*"],
-            "@/services/*": ["services/*"],
-            "@/components/*": ["components/*"],
-            "@/hooks/*": ["hooks/*"],
-            "@/utils/*": ["utils/*"]
+            "@/*": ["src/*"],
+            "@components/*": ["src/components/*"],
+            "@services/*": ["src/services/*"],
+            "@utils/*": ["src/utils/*"],
+            "@hooks/*": ["src/hooks/*"]
         },
         "strict": true,
         "esModuleInterop": true,
